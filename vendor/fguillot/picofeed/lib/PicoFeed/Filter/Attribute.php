@@ -413,11 +413,8 @@ class Attribute
 			if ($this->image_camo_key !== '' && $this->image_camo_url !== '') {
 				$camoKey = $this->image_camo_key;
 				$camoURL = $this->image_camo_url;
-				error_log($camoKey);
-				error_log($camoURL);
 				$hmac = hash_hmac('sha1',$value,$camoKey);
 				$hexurl = bin2hex($value);
-				error_log($camoURL.'/'.$hmac.'/'.$hexurl);
 				$value = $camoURL.'/'.$hmac.'/'.$hexurl;
 				
 				
