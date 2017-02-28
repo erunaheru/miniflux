@@ -101,6 +101,8 @@ class Html
             $this->attribute->setImageProxyCallback($this->config->getFilterImageProxyCallback());
             $this->attribute->setImageProxyUrl($this->config->getFilterImageProxyUrl());
             $this->attribute->setImageProxyProtocol($this->config->getFilterImageProxyProtocol());
+			$this->attribute->setCamoURL($this->config->getCamoURL());
+			$this->attribute->setCamoKey($this->config->getCamoKey());
             $this->attribute->setIframeWhitelist($this->config->getFilterIframeWhitelist(array()));
             $this->attribute->setIntegerAttributes($this->config->getFilterIntegerAttributes(array()));
             $this->attribute->setAttributeOverrides($this->config->getFilterAttributeOverrides(array()));

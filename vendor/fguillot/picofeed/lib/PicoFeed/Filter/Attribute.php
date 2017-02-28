@@ -408,14 +408,27 @@ class Attribute
      */
     public function rewriteImageProxyUrl($tag, $attribute, &$value)
     {
-        if ($tag === 'img' && $attribute === 'src'
-        && !($this->image_proxy_limit_protocol !== '' && stripos($value, $this->image_proxy_limit_protocol.':') !== 0)) {
-            if ($this->image_proxy_url) {
-                $value = sprintf($this->image_proxy_url, rawurlencode($value));
-            } elseif (is_callable($this->image_proxy_callback)) {
-                $value = call_user_func($this->image_proxy_callback, $value);
-            }
-        }
+		error_log("rewriteImage");
+		if ($tag === 'img' && $attribute === 'src') {
+			if ($this->image_camo_key !== '' && $this->image_camo_url !== '') {
+				$camoKey = $this->image_camo_key;
+				$camoURL = $this->image_camo_url;
+				error_log($camoKey);
+				error_log($camoURL);
+				$hmac = hash_hmac('sha1',$value,$camoKey);
+				$hexurl = bin2hex($value);
+				error_log($camoURL.'/'.$hmac.'/'.$hexurl);
+				$value = $camoURL.'/'.$hmac.'/'.$hexurl;
+				
+				
+			} elseif ( !($this->image_proxy_limit_protocol !== '' && stripos($value, $this->image_proxy_limit_protocol.':') !== 0)) {
+				if ($this->image_proxy_url) {
+					$value = sprintf($this->image_proxy_url, rawurlencode($value));
+				} elseif (is_callable($this->image_proxy_callback)) {
+					$value = call_user_func($this->image_proxy_callback, $value);
+				}
+			}
+		}
 
         return true;
     }
@@ -695,6 +708,18 @@ class Attribute
     {
         $this->image_proxy_limit_protocol = $value ?: $this->image_proxy_limit_protocol;
 
+        return $this;
+    }
+	
+	public function setCamoURL($value)
+    {
+        $this->image_camo_url = $value ?: $this->image_camo_url;
+        return $this;
+    }
+	
+	public function setCamoKey($value)
+    {
+        $this->image_camo_key = $value ?: $this->image_camo_key;
         return $this;
     }
 }

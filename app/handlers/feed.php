@@ -193,6 +193,9 @@ function get_reader_config()
     $config->setProxyPort(PROXY_PORT);
     $config->setProxyUsername(PROXY_USERNAME);
     $config->setProxyPassword(PROXY_PASSWORD);
+	
+	$config->setCamoURL(CAMO_URL);
+	$config->setCamoKey(CAMO_KEY);
 
     // Filter
     $config->setFilterIframeWhitelist(Model\Config\get_iframe_whitelist());

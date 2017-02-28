@@ -63,7 +63,7 @@ class Mysql extends Base
      */
     protected function buildDsn(array $settings)
     {
-        $charset = empty($settings['charset']) ? 'utf8' : $settings['charset'];
+        $charset = empty($settings['charset']) ? 'utf8mb4' : $settings['charset'];
         $dsn = 'mysql:host='.$settings['hostname'].';dbname='.$settings['database'].';charset='.$charset;
 
         if (! empty($settings['port'])) {
