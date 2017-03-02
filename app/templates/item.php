@@ -7,22 +7,6 @@
     <?php echo $hide ? 'data-hide="true"' : '' ?>
     >
     <h2 <?php echo Miniflux\Helper\rtl($item) ?>>
-        <span class="item-icons">
-            <a
-                class="bookmark-icon"
-                href="?action=bookmark&amp;value=<?php echo (int)!$item['bookmark'] ?>&amp;id=<?php echo $item['id'] ?>&amp;offset=<?php echo $offset ?>&amp;redirect=<?php echo $menu ?>&amp;feed_id=<?php echo $item['feed_id'] ?>"
-                title="<?php echo ($item['bookmark']) ? t('remove bookmark') : t('bookmark') ?>"
-                data-action="bookmark"
-                data-reverse-title="<?php echo ($item['bookmark']) ? t('bookmark') : t('remove bookmark') ?>"
-            ></a>
-            <a
-                class="read-icon"
-                href="?action=<?php echo ($item['status'] === 'unread') ? 'mark-item-read' : 'mark-item-unread' ?>&amp;id=<?php echo $item['id'] ?>&amp;offset=<?php echo $offset ?>&amp;redirect=<?php echo $menu ?>&amp;feed_id=<?php echo $item['feed_id'] ?>"
-                title="<?php echo ($item['status'] === 'unread') ? t('mark as read') : t('mark as unread') ?>"
-                data-action="<?php echo ($item['status'] === 'unread') ? 'mark-read' : 'mark-unread' ?>"
-                data-reverse-title="<?php echo ($item['status'] === 'unread') ? t('mark as unread') : t('mark as read') ?>"
-            ></a>
-        </span>
         <span class="item-title">
         <?php echo Miniflux\Helper\favicon($favicons, $item['feed_id']) ?>
         <?php if ($display_mode === 'full' || $item_title_link == 'original'): ?>
@@ -93,4 +77,20 @@
     <?php else: ?>
         <p class="no-preview"></p>
     <?php endif ?>
+	<span class="item-icons">
+            <a
+                class="bookmark-icon"
+                href="?action=bookmark&amp;value=<?php echo (int)!$item['bookmark'] ?>&amp;id=<?php echo $item['id'] ?>&amp;offset=<?php echo $offset ?>&amp;redirect=<?php echo $menu ?>&amp;feed_id=<?php echo $item['feed_id'] ?>"
+                title="<?php echo ($item['bookmark']) ? t('remove bookmark') : t('bookmark') ?>"
+                data-action="bookmark"
+                data-reverse-title="<?php echo ($item['bookmark']) ? t('bookmark') : t('remove bookmark') ?>"
+            ></a>
+            <a
+                class="read-icon"
+                href="?action=<?php echo ($item['status'] === 'unread') ? 'mark-item-read' : 'mark-item-unread' ?>&amp;id=<?php echo $item['id'] ?>&amp;offset=<?php echo $offset ?>&amp;redirect=<?php echo $menu ?>&amp;feed_id=<?php echo $item['feed_id'] ?>"
+                title="<?php echo ($item['status'] === 'unread') ? t('mark as read') : t('mark as unread') ?>"
+                data-action="<?php echo ($item['status'] === 'unread') ? 'mark-read' : 'mark-unread' ?>"
+                data-reverse-title="<?php echo ($item['status'] === 'unread') ? t('mark as unread') : t('mark as read') ?>"
+            ></a>
+        </span>
 </article>
