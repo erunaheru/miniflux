@@ -951,11 +951,15 @@ html[dir="rtl"] span.items-count:before {
         margin-top: -30px;
     }
 
-	.item-icons {
+    .item-icons {
         display: block;
-		text-align: right;
-		font-size: 200%;
+	text-align: right;
+	font-size: 200%;
     }
+
+   .item-icons-top {
+	display: none;
+   }
 }
 
 /* mobile design */

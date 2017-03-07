@@ -70,6 +70,22 @@
         <?php echo Miniflux\Template\load('bookmark_links', array('item' => $item, 'menu' => $menu, 'offset' => $offset)) ?>
         <?php echo Miniflux\Template\load('status_links', array('item' => $item, 'menu' => $menu, 'offset' => $offset)) ?>
     </ul>
+	<span class="item-icons item-icons-top">
+            <a
+                class="bookmark-icon"
+                href="?action=bookmark&amp;value=<?php echo (int)!$item['bookmark'] ?>&amp;id=<?php echo $item['id'] ?>&amp;offset=<?php echo $offset ?>&amp;redirect=<?php echo $menu ?>&amp$
+                title="<?php echo ($item['bookmark']) ? t('remove bookmark') : t('bookmark') ?>"
+                data-action="bookmark"
+                data-reverse-title="<?php echo ($item['bookmark']) ? t('bookmark') : t('remove bookmark') ?>"
+            ></a>
+            <a
+                class="read-icon"
+                href="?action=<?php echo ($item['status'] === 'unread') ? 'mark-item-read' : 'mark-item-unread' ?>&amp;id=<?php echo $item['id'] ?>&amp;offset=<?php echo $offset ?>&amp;redi$
+                title="<?php echo ($item['status'] === 'unread') ? t('mark as read') : t('mark as unread') ?>"
+                data-action="<?php echo ($item['status'] === 'unread') ? 'mark-read' : 'mark-unread' ?>"
+                data-reverse-title="<?php echo ($item['status'] === 'unread') ? t('mark as unread') : t('mark as read') ?>"
+            ></a>
+        </span>
     <?php if ($display_mode === 'full'): ?>
         <div class="preview-full-content" <?php echo Miniflux\Helper\rtl($item) ?>><?php echo $item['content'] ?></div>
     <?php elseif ($display_mode === 'summaries'): ?>
