@@ -268,6 +268,11 @@ Miniflux.Item = (function() {
             request.open("POST", "?action=bookmark&id=" + item_id + "&value=" + value, true);
             request.send();
         },
+		selectFirstItem: function () {
+			if (nbPageItems > 0) {
+				Miniflux.Nav.SelectNextItem();
+			}
+		},
         SwitchStatus: function(item) {
             var status = item.getAttribute("data-item-status");
 
