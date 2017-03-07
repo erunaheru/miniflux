@@ -80,6 +80,7 @@ Miniflux.Event = (function() {
                         case 'bookmark':
                             if (currentItem) {
                                 Miniflux.Item.SwitchBookmark(currentItem);
+				Miniflux.Item.MarkAsRead(currentItem);
                             }
                             break;
                         case 'download-item':
@@ -200,6 +201,7 @@ Miniflux.Event = (function() {
                         case 102:
                             if (currentItem) {
                                 Miniflux.Item.SwitchBookmark(currentItem);
+				Miniflux.Item.MarkAsRead(currentItem);
                             }
                             break;
                         case 'h':
