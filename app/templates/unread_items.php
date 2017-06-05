@@ -1,10 +1,10 @@
 <?php echo Miniflux\Template\load('search_form') ?>
 
 <div class="page-header">
-    <h2><?php echo t('Unread') ?><span id="page-counter"><?php echo isset($nb_items) ? $nb_items : '' ?></span></h2>
+    <h2 class="mobiletitle"><?php echo t('Unread') ?><span id="page-counter"><?php echo isset($nb_items) ? $nb_items : '' ?></span></h2>
     <?php if (!empty($groups)): ?>
     <nav>
-        <ul id="grouplist">
+        <ul id="grouplist" class="mobilehide">
             <?php foreach ($groups as $group): ?>
             <li  <?php echo $group['id'] == $group_id ? 'class="active"' : '' ?>>
                 <a href="?action=unread&group_id=<?php echo$group['id']?>"><?php echo$group['title']?></a>
@@ -14,7 +14,7 @@
     </nav>
     <?php endif ?>
 
-    <ul>
+    <ul class="mobilehide">
         <li>
             <a href="?action=unread<?php echo $group_id === null ? '' : '&amp;group_id='.$group_id ?>&amp;order=updated&amp;direction=<?php echo $direction == 'asc' ? 'desc' : 'asc' ?>"><?php echo tne('sort by date %s(%s)%s', '<span class="hide-mobile">',$direction == 'desc' ? t('older first') : t('most recent first'), '</span>') ?></a>
         </li>
@@ -23,6 +23,9 @@
         </li>
     </ul>
 </div>
+
+<script src="assets/js/jquery-3.2.1.slim.min.js"></script>
+<script src="assets/js/mobilehide.js"></script>
 
 <section class="items" id="listing">
     <?php if (empty($items)): ?>

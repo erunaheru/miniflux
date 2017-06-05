@@ -88,7 +88,7 @@ Router\get_action('bookmarks', function () {
         'nothing_to_read' => Request\int_param('nothing_to_read'),
         'menu' => 'bookmarks',
         'groups' => Model\Group\get_all($user_id),
-        'title' => t('Bookmarks').' ('.$nb_items.')'
+        'title' => t('Miniflux - Bookmarks').' ('.$nb_items.')'
     )));
 });
 

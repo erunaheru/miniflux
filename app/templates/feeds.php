@@ -1,5 +1,5 @@
 <div class="page-header">
-    <h2><?php echo t('Subscriptions') ?></h2>
+    <h2 class="mobiletitle"><?php echo t('Subscriptions') ?></h2>
     <nav>
         <ul>
             <li><a href="?action=add"><?php echo t('add') ?></a></li>
@@ -10,6 +10,10 @@
         </ul>
     </nav>
 </div>
+
+<script src="assets/js/jquery-3.2.1.slim.min.js"></script>
+<script src="assets/js/mobilehide.js"></script>
+
 
 <?php if (empty($feeds)): ?>
     <p class="alert alert-info"><?php echo t('No subscription') ?></p>

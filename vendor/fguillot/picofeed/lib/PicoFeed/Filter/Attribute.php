@@ -408,7 +408,6 @@ class Attribute
      */
     public function rewriteImageProxyUrl($tag, $attribute, &$value)
     {
-		error_log("rewriteImage");
 		if ($tag === 'img' && $attribute === 'src') {
 			if ($this->image_camo_key !== '' && $this->image_camo_url !== '') {
 				$camoKey = $this->image_camo_key;

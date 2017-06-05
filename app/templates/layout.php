@@ -12,7 +12,7 @@
         <meta name="referrer" content="no-referrer">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <title><?php echo isset($title) ? Miniflux\Helper\escape($title) : t('Miniflux') ?></title>
+        <title>Miniflux - <?php echo isset($title) ? Miniflux\Helper\escape($title) : t('Miniflux') ?></title>
 
         <link rel="icon" type="image/png" href="assets/img/favicon.png">
         <link rel="shortcut icon" href="favicon.ico">
@@ -25,7 +25,7 @@
         <script type="text/javascript" src="assets/js/app.min.js?<?php echo filemtime('assets/js/app.min.js') ?>" defer></script>
     </head>
     <body>
-        <header>
+        <header class="mobilehide">
             <nav>
                 <a class="logo" href="?"><?php echo tne('mini%sflux%s','<span>','</span>') ?></a>
                 <ul>
@@ -63,7 +63,7 @@
                 <li><a href="?action=logout"><?= t('logout') ?></a></li>
             </ul>
         </div>
-        <section class="page" data-item-page="<?= $menu ?>">
+        <section class="page mobileexpand" data-item-page="<?= $menu ?>">
             <?php echo Miniflux\Helper\flash('flash_message', '<div class="alert alert-success">%s</div>') ?>
             <?php echo Miniflux\Helper\flash('flash_error_message', '<div class="alert alert-error">%s</div>') ?>
             <?php echo $content_for_layout ?>
