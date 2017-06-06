@@ -961,6 +961,16 @@ html[dir="rtl"] span.items-count:before {
     .search {
         margin-top: -30px;
     }
+
+    .item-icons {
+        display: block;
+	text-align: right;
+	font-size: 200%;
+    }
+
+   .item-icons-top {
+	display: none;
+   }
 }
 
 /* mobile design */
@@ -1025,4 +1035,27 @@ html[dir="rtl"] span.items-count:before {
         box-sizing: border-box;
         width: 100%;
     }
+<<<<<<< HEAD
+=======
+
+    .item-icons {
+        display: block;
+		text-align: right;
+		font-size: 150%;
+    }
+
+    .item-title {
+        display: block;
+    }
+
+    .item-icons .read-icon,
+    .item-icons .bookmark-icon {
+        font-size: 1.7em;
+        margin-left: 15px;
+    }
+
+    .item-infos .bookmark-icon {
+        font-size: 2.0em;
+    }
+>>>>>>> erunaheru
 }

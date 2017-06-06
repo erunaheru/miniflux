@@ -4,7 +4,7 @@
     <?php echo Miniflux\Template\load('common/search') ?>
 
     <div class="page-header">
-        <h2><?php echo t('Bookmarks') ?><span id="page-counter"><?php echo isset($nb_items) ? $nb_items : '' ?></span></h2>
+        <h2 class="mobiletitle"><?php echo t('Miniflux - Bookmarks') ?><span id="page-counter"><?php echo isset($nb_items) ? $nb_items : '' ?></span></h2>
         <?php if (!empty($groups)): ?>
         <nav>
             <ul id="grouplist">
@@ -17,6 +17,10 @@
         </nav>
         <?php endif ?>
     </div>
+
+<script src="assets/js/jquery-3.2.1.slim.min.js"></script>
+<script src="assets/js/mobilehide.js"></script>
+
 
     <?php if ($nothing_to_read): ?>
         <p class="alert alert-info"><?php echo t('There is nothing new to read, enjoy your favorites articles!') ?></p>

@@ -16,6 +16,7 @@ Miniflux.App = (function() {
             Miniflux.Event.ListenVisibilityEvents();
             Miniflux.Event.ListenTouchEvents();
             this.FrontendUpdateCheck();
+			document.addEventListener('DOMContentLoaded', Miniflux.Item.selectFirstItem(), false);
         },
         FrontendUpdateCheck: function() {
             var request = new XMLHttpRequest();

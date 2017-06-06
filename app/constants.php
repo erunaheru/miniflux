@@ -1,6 +1,6 @@
 <?php
 
-defined('APP_VERSION') or define('APP_VERSION', Miniflux\Helper\parse_app_version('$Format:%d$','$Format:%H$'));
+defined('APP_VERSION') or define('APP_VERSION', Miniflux\Helper\parse_app_version(' (HEAD -> master, tag: v1.2.1, origin/master, origin/HEAD)','f3cf9157f25e98d0f92c4abc4a1fcc4f070e2a53'));
 
 define('HTTP_USER_AGENT', 'Miniflux (https://miniflux.net)');
 defined('HTTP_TIMEOUT') or define('HTTP_TIMEOUT', 20);

@@ -26,3 +26,4 @@ config.php
 !app/validators/*
 rules/*.php
 data/favicons/*.*
+app/constants.php
