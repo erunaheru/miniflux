@@ -1,4 +1,4 @@
-<div class="search">
+<div class="search mobilehide">
     <span id="search-opener"<?php echo isset($opened) && $opened ? ' class="hide"' : '' ?> data-action="show-search">&laquo; <?php echo t('Search')?></span>
     <form id="search-form"<?php echo isset($opened) && $opened ? '' : ' class="hide"' ?> action="?" method="get">
         <?php echo Miniflux\Helper\form_hidden('action', array('action' => 'search')) ?>

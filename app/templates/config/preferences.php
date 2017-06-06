@@ -1,5 +1,5 @@
 <div class="page-header">
-    <h2><?php echo $title ?></h2>
+    <h2 class="mobiletitle"><?php echo $title ?></h2>
     <nav>
         <ul>
             <li class="active"><a href="?action=config"><?php echo t('general') ?></a></li>
@@ -14,6 +14,10 @@
         </ul>
     </nav>
 </div>
+
+<script src="assets/js/jquery-3.2.1.slim.min.js"></script>
+<script src="assets/js/mobilehide.js"></script>
+
 <section>
 <form method="post" action="?action=config" autocomplete="off" id="config-form">
     <?php echo Miniflux\Helper\form_hidden('csrf', $values) ?>

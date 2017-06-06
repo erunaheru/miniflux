@@ -4,7 +4,7 @@ defined('APP_VERSION') or define('APP_VERSION', Miniflux\Helper\parse_app_versio
 
 define('HTTP_USER_AGENT', 'Miniflux (https://miniflux.net)');
 defined('HTTP_TIMEOUT') or define('HTTP_TIMEOUT', 20);
-defined('HTTP_MAX_RESPONSE_SIZE') or define('HTTP_MAX_RESPONSE_SIZE', 10485760);
+defined('HTTP_MAX_RESPONSE_SIZE') or define('HTTP_MAX_RESPONSE_SIZE', 2097152);
 
 defined('BASE_URL_DIRECTORY') or define('BASE_URL_DIRECTORY', dirname($_SERVER['PHP_SELF']));
 defined('ROOT_DIRECTORY') or define('ROOT_DIRECTORY', implode(DIRECTORY_SEPARATOR, array(__DIR__, '..')));
@@ -24,7 +24,6 @@ defined('DB_PASSWORD') or define('DB_PASSWORD', '');
 defined('DEBUG_MODE') or define('DEBUG_MODE', false);
 defined('DEBUG_FILENAME') or define('DEBUG_FILENAME', DATA_DIRECTORY.DIRECTORY_SEPARATOR.'debug.log');
 
-defined('BASE_URL') or define('BASE_URL', '');
 defined('THEME_DIRECTORY') or define('THEME_DIRECTORY', 'themes');
 defined('THEME_URL_PATH') or define('THEME_URL_PATH', 'themes');
 defined('SESSION_SAVE_PATH') or define('SESSION_SAVE_PATH', '');

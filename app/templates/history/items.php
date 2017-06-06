@@ -4,7 +4,7 @@
     <?php echo Miniflux\Template\load('common/search') ?>
 
     <div class="page-header">
-        <h2><?php echo t('History') ?><span id="page-counter"><?php echo isset($nb_items) ? $nb_items : '' ?></span></h2>
+        <h2 class="mobiletitle"><?php echo t('History') ?><span id="page-counter"><?php echo isset($nb_items) ? $nb_items : '' ?></span></h2>
         <?php if (!empty($groups)): ?>
         <nav>
             <ul id="grouplist">
@@ -24,6 +24,10 @@
             <li><a href="?action=confirm-flush-history<?php echo $group_id === null ? '' : '&amp;group_id='.$group_id ?>"><?php echo t('flush all items') ?></a></li>
         </ul>
     </div>
+
+<script src="assets/js/jquery-3.2.1.slim.min.js"></script>
+<script src="assets/js/mobilehide.js"></script>
+
 
     <?php if ($nothing_to_read): ?>
         <p class="alert alert-info"><?php echo t('There is nothing new to read, enjoy your previous readings!') ?></p>
