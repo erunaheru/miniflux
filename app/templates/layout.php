@@ -5,7 +5,6 @@
     <?php endif ?>
 >
     <head>
-        <?php echo Miniflux\Template\load('common/head') ?>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
         <meta name="mobile-web-app-capable" content="yes">
@@ -13,6 +12,7 @@
         <meta name="referrer" content="no-referrer">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
+        <title>Miniflux - <?php echo isset($title) ? Miniflux\Helper\escape($title) : t('Miniflux') ?></title>
 
         <link rel="icon" type="image/png" href="assets/img/favicon.png">
         <link rel="shortcut icon" href="favicon.ico">
@@ -25,8 +25,6 @@
         <script type="text/javascript" src="assets/js/app.min.js?<?php echo filemtime('assets/js/app.min.js') ?>" defer></script>
     </head>
     <body>
-        <?php echo Miniflux\Template\load('common/menu', array('menu' => isset($menu) ? $menu : '')) ?>
-        <section class="page" data-item-page="<?= $menu ?>">
         <header class="mobilehide">
             <nav>
                 <a class="logo" href="?"><?php echo tne('mini%sflux%s','<span>','</span>') ?></a>
